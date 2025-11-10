@@ -1,0 +1,414 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+html{
+    font-size: 62.5%;
+}
+
+
+.navBar{
+    padding : 1.7rem 4.2rem;
+    background-color: #121626;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navContainer1{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.navContainer2{
+    display: flex;
+    gap : 6rem;
+    align-items: center;
+}
+.sweet_cheeks_navLogo{
+    height : 10rem;
+    width : 20rem;
+}
+
+.nav_links_unorder_list{
+    display: flex;
+    gap : 3rem;
+    
+}
+
+.nav_links_unorder_list li{
+    list-style-type: none;
+}
+
+.nav_links_unorder_list li a{
+    text-decoration: none;
+    color : white;
+    font-size: 1.6rem;
+}
+
+.navLogos{
+    display: flex;
+    gap : 3rem;
+    color : white;
+    font-size: 1.8rem;
+}
+
+.navLogos a{
+    color: white;
+}
+.nav_btn{
+    color : black;
+    background-color: rgb(227, 8, 154);
+    border: none;
+    font-size: 1.4rem;
+    padding : 1rem;
+    width : 12rem;
+    height : 5rem;
+    border-radius: 3rem;
+}
+
+.nav_btn:hover{
+    background-color: rgb(233, 110, 192);
+}
+
+.nav_links_unorder_list li a:focus{
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+
+/*responsive navbar*/
+/* Responsive navbar: hamburger + mobile collapse */
+.nav_toggle{
+    display: none;
+    background: none;
+    border: none;
+    padding: .6rem;
+    cursor: pointer;
+    color: white;
+}
+.nav_toggle .bar{
+    display: block;
+    width: 2.6rem;
+    height: .35rem;
+    background: white;
+    margin: .35rem 0;
+    border-radius: 2px;
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+/* collapsed menu transition */
+.nav_links_unorder_list{
+    transition: max-height .28s ease, padding .25s ease;
+}
+.navBar.open .nav_toggle .bar:nth-child(1){
+    transform: translateY(.7rem) rotate(45deg);
+}
+.navBar.open .nav_toggle .bar:nth-child(2){
+    opacity: 0;
+}
+.navBar.open .nav_toggle .bar:nth-child(3){
+    transform: translateY(-.7rem) rotate(-45deg);
+}
+.navBar.open .nav_links_unorder_list{
+    max-height: 40rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* mobile layout */
+@media (max-width: 860px){
+    .navBar{
+        padding: 1.2rem 1.6rem;
+    }
+    .navContainer1{
+        gap: 1rem;
+    }
+    .sweet_cheeks_navLogo{
+        height: 6rem;
+        width: auto;
+    }
+
+    /* show hamburger, hide desktop items */
+    .nav_toggle{
+        display: block;
+        margin-right: .6rem;
+    }
+    .navLogos{
+        display: none; /* move to menu if required */
+    }
+    .nav_btn{
+        display: none; /* can be moved into menu if desired */
+    }
+
+    /* convert horizontal list to vertical collapsible menu */
+    .nav_links_unorder_list{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #121626;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 0 1.6rem;
+        max-height: 0;
+        overflow: hidden;
+        z-index: 999;
+    }
+
+    .nav_links_unorder_list li{
+        width: 100%;
+        border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav_links_unorder_list li a{
+        display: block;
+        padding: 1.2rem 0;
+        width: 100%;
+        font-size: 1.8rem;
+    }
+}
+/*<---------------------------------------------main section ----------------------------------------------------*/
+.footer_main_wrapper{
+    background-color: #121626;
+}
+main{
+    margin-bottom: 5rem;
+}
+
+.main_image{
+    padding-top: 13.7rem;
+    max-width: 120rem;
+}
+
+.main_hero_img{
+    height: auto;
+    width: 100vw;
+    text-align: center;
+}
+
+/*grid images*/
+.grid_img_container{
+    margin : 3rem 5rem;
+    display: grid;
+    grid-template-rows: repeat(3 , 1fr);
+    row-gap: 2rem;
+}
+
+.grid_img_container1 , .grid_img_container2 , .grid_img_container3{
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    column-gap: 1rem;
+}
+
+.ice_cream_img1{
+    height: 100%;
+    width: 100%;
+}
+
+/*<----------------------------footer section----------------------->*/
+footer{
+    height : 50rem;
+}
+.footer_container{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #121626;
+    color : white;
+    font-size: large;
+    line-height: 5rem;
+    margin-bottom: 9rem;
+}
+
+.footer_links_container a{
+    background-color: pink;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    margin: 0.5rem;
+    color :#121626;
+}
+
+.copy_right_contaner{
+    color : pink;
+    text-align: center;
+    font-size: medium;
+    background-color: #121626;
+}
+
+/*<---------------------------adding media quiries --------------------*>*/
+@media (max-width : 760px){
+.grid_img_container1 , .grid_img_container2 , .grid_img_container3{
+    display: grid;
+    grid-template-columns: repeat(1 , 1fr);
+    row-gap: 1rem;
+}
+.footer_container{
+    padding-left: 2rem;
+    flex-direction: column;
+    align-content: space-between;
+    margin-bottom: 0rem;
+    line-height: 6rem;
+}
+}
+
+/*<----------------------------------styling reservations page -------------------------------->*/
+.reservations_img{
+    background-image: url("/images/reservations_img.png");
+    background-position: center;
+    background-size: cover;
+    width : 100vw;
+    height : 25vw;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    line-height: 5rem;
+    justify-content: center;
+}
+
+.reservations_heading{
+    font-size: 4rem;
+}
+
+.reservations_discription{
+    font-size: 2.5rem;
+}
+
+.reservations_btn{
+    width : 20rem;
+    height : 5rem;
+    border-radius: 10px;
+    border : none;
+    background-color: red;
+    color : white;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+.reservations_btn:hover{
+    background-color: rgb(230, 80, 80);
+}
+
+.resy{
+    background-color: white;
+    color :rgb(230, 80, 80);
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+
+@media (max-width : 920px){
+    .reservations_img{
+        line-height: 2rem;
+        height : 30vh;
+    }
+    .reservations_heading{
+      font-size: 3rem;
+    }
+    .reservations_discription{
+        font-size: 1.8rem;
+    }
+    .reservations_btn{
+        width : 15rem;
+        height: 3rem;
+        font-size: 1.6rem;
+
+    }
+    .resy{
+        font-size: 1rem;
+    }
+}
+
+@media (max-width : 780px){
+    .reservations_img{
+        line-height: 1.5rem;
+    }
+    .reservations_heading{
+      font-size: 2rem;
+    }
+    .reservations_discription{
+        font-size: 1.4rem;
+    }
+    .reservations_btn{
+        width : 13rem;
+        height: 2.4rem;
+        font-size: 1.2rem;
+
+    }
+    .resy{
+        font-size: 0.8rem;
+    }
+}
+
+/*<------------------------------------styling menu page ---------------------------->*/
+.menu__body{
+    background-color: #121626;
+}
+
+.main__container{
+    background-color: #121626;
+    max-width: 100vw;
+    height : 100%;
+    margin: auto;
+    padding-top: 13.7rem;
+    color: white;
+    margin-bottom: 5rem;
+}
+
+.sub_container{
+    width : 60%;
+    margin: auto;
+}
+
+.main_nav_links{
+    display: flex;
+    margin-top : 6rem;
+    gap : 3rem;
+    justify-content: center;
+}
+
+.main_nav_links li{
+    list-style-type: none;
+}
+
+.main_nav_links li a{
+    color : white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.menu_mian_heading{
+    text-align: center;
+    margin: 5rem;
+    font-size: medium;
+}
+
+.menu_item1{
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    justify-items: center;
+    color : rgb(216, 172, 211);
+    gap : 1rem 2rem;
+}
+
+.menu_dish_heaidng{
+    font-size: 3rem;
+    text-align: center;
+}
+
+.item1{
+    font-size: 1.6rem;
+}
+
+.add_on{
+    font-size: 1.1rem;
+}
