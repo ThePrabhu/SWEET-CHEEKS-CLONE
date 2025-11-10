@@ -262,7 +262,7 @@ footer{
 
 /*<----------------------------------styling reservations page -------------------------------->*/
 .reservations_img{
-    background-image: url("/images/reservations_img.png");
+    background-image: url("reservations_img.png");
     background-position: center;
     background-size: cover;
     width : 100vw;
