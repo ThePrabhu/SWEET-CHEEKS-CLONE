@@ -412,3 +412,13 @@ footer{
 .add_on{
     font-size: 1.1rem;
 }
+
+@media (max-width : 540px){
+    .main_nav_links{
+        gap : 1rem;
+        justify-content: space-evenly;
+    }
+    .main_page_nav_links{
+        max-width: 70%;
+    }
+}
